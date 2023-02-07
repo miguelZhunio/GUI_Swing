@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package gui_swing.componentes;
 
 import java.awt.*;
@@ -26,8 +22,7 @@ public class JPapup{
         // Se instancia un objeto ItemListener y se registra sobre los
         // elementos de menu ya instanciadosControladorCheckBox
         primerElementoMenu.addItemListener( new ControladorCheckBox() );
-        segundoElementoMenu.addItemListener( new ControladorCheckBox() );  
-        tercerElementoMenu.addItemListener( new ControladorCheckBox() );
+         tercerElementoMenu.addItemListener( new ControladorCheckBox() );
 
         // Instancia un objeto Menu de tipo PopUp y le añade los objetos
         // CheckboxMenuItem

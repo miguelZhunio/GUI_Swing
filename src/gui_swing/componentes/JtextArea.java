@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 
 package gui_swing.componentes;
 
@@ -33,8 +29,5 @@ public class JtextArea extends JFrame {
     add(status, BorderLayout.SOUTH);
   }
 
-  public static void main(String args[]) {
-    JtextArea app = new JtextArea();
-    app.setVisible(true); //lo hace visible a la ventana de jframe
-  }	
+  	
 }
