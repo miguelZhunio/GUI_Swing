@@ -8,6 +8,7 @@ import gui_swing.componentes.JProgress;
 import gui_swing.componentes.JTF_Ejemplo_IV;
 import gui_swing.componentes.JtabbedPane;
 import gui_swing.componentes.JtextArea;
+import gui_swing.componentes.Ventana2;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.text.ParseException;
@@ -52,8 +53,10 @@ public class GUI_Swing {
                 break;
             case "3": //Issac
                 JTF_Ejemplo_IV ventana1 = new JTF_Ejemplo_IV();
-        
                 ventana1.setVisible(true);//Visible Ventana
+                
+                Ventana2 mostrar = new Ventana2();//2da ventana
+                mostrar.setVisible(true);
                 break;
             case "4": // Erick
                 JtextArea area = new JtextArea();
