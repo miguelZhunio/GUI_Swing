@@ -1,7 +1,27 @@
 package gui_swing.componentes;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
+import javax.swing.SwingConstants;
+
 public class General extends javax.swing.JFrame {
 
+    /**
+     *
+
+
+
+
+
+JLayoutPane
+Salir
+     */
     /**
      * Creates new form General
      */
@@ -55,7 +75,7 @@ public class General extends javax.swing.JFrame {
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(256, 256, 256)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(231, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -88,7 +108,105 @@ public class General extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        String componente =jComboBox1.getSelectedItem().toString();
+        if (componente.equalsIgnoreCase("JTextComponent")) {  
+            try {
+                Event_JTextComponent editorpane = new Event_JTextComponent();
+            } catch (ParseException ex) {
+                Logger.getLogger(General.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        if (componente.equalsIgnoreCase("JEditorPane")) {
+            Event_JEditorPane editorpane = new Event_JEditorPane();
+        }
+        if (componente.equalsIgnoreCase("JTextField") || componente.equalsIgnoreCase("JPasswordFiled")) {
+            JTF_Ejemplo_IV ventana1 = new JTF_Ejemplo_IV();
+            ventana1.setVisible(true);//Visible Ventana
+            Ventana2 mostrar = new Ventana2();//2da ventana
+            mostrar.setVisible(true);
+        }
+        if (componente.equalsIgnoreCase("JTextArea")) {
+            JtextArea area = new JtextArea();
+            area.setVisible(true);
+        }
+        if (componente.equalsIgnoreCase("JPopupMenu")) {
+            JPapup papu = new JPapup();
+        }
+        if (componente.equalsIgnoreCase("JProgressBar")) {
+            new JProgress().setVisible(true);
+        }
+        if (componente.equalsIgnoreCase("JTabbedPane")) {
+            /* Set the Nimbus look and feel */
+                //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+                /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+                 * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+                 */
+                try {
+                    for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                        if ("Nimbus".equals(info.getName())) {
+                            javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                            break;
+                        }
+                    }
+                } catch (ClassNotFoundException ex) {
+                    java.util.logging.Logger.getLogger(JtabbedPane.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                } catch (InstantiationException ex) {
+                    java.util.logging.Logger.getLogger(JtabbedPane.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                } catch (IllegalAccessException ex) {
+                    java.util.logging.Logger.getLogger(JtabbedPane.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+                    java.util.logging.Logger.getLogger(JtabbedPane.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                }
+                //</editor-fold>
+                /* Create and display the form */
+                java.awt.EventQueue.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        new JtabbedPane().setVisible(true);
+                    }
+                });
+        }
+        if (componente.equalsIgnoreCase("JFileChooser")) {
+            JChoose choose = new JChoose();
+            choose.setVisible(true);
+        }
+        if (componente.equalsIgnoreCase("JLayoutPane")) {
+            JFrame v = new JFrame("JLAyeredPane");
+                JLayeredPane lay=new JLayeredPane();
+                JLabel p1=new JLabel();
+                p1.setOpaque(true);
+                p1.setText("Buenos Dias ");
+                p1.setBackground(Color.CYAN);
+                p1.setBounds(0, 0, 145,250);
+                
+                JLabel p2=new JLabel();
+                p2.setOpaque(true);
+                p2.setBackground(Color.PINK);
+                p2.setBounds(60, 60, 145,250);
+                
+                JLabel p3=new JLabel();
+                p3.setOpaque(true);
+                p3.setText("Gupo#2");
+                p3.setHorizontalAlignment(SwingConstants.CENTER);
+                p3.setBackground(Color.MAGENTA);
+                p3.setBounds(150, 150, 145,250);
+                
+                lay.add(p1,Integer.valueOf(2));
+                lay.add(p2,Integer.valueOf(0));
+                lay.add(p3,Integer.valueOf(1));
+                
+                lay.setBounds(50, 50, 500, 500);
+                v.add(lay);
+		v.setDefaultCloseOperation(v.EXIT_ON_CLOSE);
+                v.setSize(new Dimension(500, 450));
+                v.setLocationRelativeTo(null);
+                v.setLayout(null);
+                v.setVisible(true);
+        }
+        if (componente.equalsIgnoreCase("Salir")) {
+            System.exit(0);
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
