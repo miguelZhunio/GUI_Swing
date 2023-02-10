@@ -101,8 +101,10 @@ public class Event_JTextComponent extends JFrame{
                 String Fecha = formatted.getText();
                 String nombre = field1.getText();
                 String comentario = area.getText();
-                String textHTML = "<center><h1>JEditorPane</h1></center> <br>"
+                String pass = password.getText();
+                String textHTML = "<center><h1>TextPane</h1></center> <br>"
                 + "<p><b>Nombre: </b>" + nombre + "</p>"
+                + "<p><b>Password: </b>" + pass + "</p>"
                 + "<p><b>Fecha: </b>" + Fecha + "</p>"
                 + "<p><b>Comentario: </b>" + comentario + "</p>";
                 panel.setText(textHTML);
@@ -127,5 +129,7 @@ public class Event_JTextComponent extends JFrame{
         setVisible(true); //Mostrar JFrame
         
     }
+    
 
 }
+
